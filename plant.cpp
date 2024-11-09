@@ -5,6 +5,11 @@
 
 /* Include files */
 #include "plant.h"
+#include <math.h>                       /* Need math functions */
+#include <GLUT/glut.h>                  /* OpenGL routines */
+#include <stdio.h>                      /* For file operations */
+#include <string.h>                     /* String operations */
+#include <stdlib.h>
 
 void initLighting()
 {
@@ -74,7 +79,7 @@ float growth(float mytime)
 #if SIGMOID_GROWTH == 1
     return 1/(1 + exp(3-mytime));
 #else
-    return MAX(log(mytime*4)/4, 0);
+    return fmax(log(mytime*4)/4, 0.0);
 #endif
 }
 

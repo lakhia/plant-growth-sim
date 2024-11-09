@@ -5,6 +5,11 @@
 
 /* Include files */
 #include "lowlevel.h"
+#include <math.h>                       /* Need math functions */
+#include <GLUT/glut.h>                  /* OpenGL routines */
+#include <stdio.h>                      /* For file operations */
+#include <string.h>                     /* String operations */
+#include <stdlib.h>
 
 /* Draw one vertex of cylinder */
 static void drawCylVertex(float jangle, float rad, float height)
@@ -41,7 +46,7 @@ void drawCone(float rad, float rad2, float height, bool withCaps, int slices)
     glBegin(GL_QUAD_STRIP);
     for (j=0; j<=slices; j++)
     {
-        jangle = j*twoPI/slices;         /* jangle goes from 0 to 2*PI */
+        jangle = j * M_PI * 2 / slices;  /* jangle goes from 0 to 2*PI */
         /* draw one cone segment */
         drawCylVertex(jangle, rad, 0.0);
         drawCylVertex(jangle, rad2, height);
@@ -52,7 +57,7 @@ void drawCone(float rad, float rad2, float height, bool withCaps, int slices)
     glBegin(GL_POLYGON);
     for (j=0; j<=slices; j++)
     {
-        jangle = j*twoPI/slices;         /* jangle goes from 0 to 2*PI */
+        jangle = j * M_PI * 2 / slices;  /* jangle goes from 0 to 2*PI */
         glNormal3f(0, 0, -1);
         glVertex3f(rad*cos(jangle), rad*sin(jangle), 0);
     }
@@ -60,9 +65,9 @@ void drawCone(float rad, float rad2, float height, bool withCaps, int slices)
     glBegin(GL_POLYGON);
     for (j=0; j<=slices; j++)
     {
-        jangle = j*twoPI/slices;         /* jangle goes from 0 to 2*PI */
+        jangle = j * M_PI * 2 / slices;  /* jangle goes from 0 to 2*PI */
         glNormal3f(0, 0, 1);
         glVertex3f(rad2*cos(jangle), rad*sin(jangle), height);
     }
     glEnd();
-}     
+}
