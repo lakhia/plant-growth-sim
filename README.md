@@ -32,6 +32,7 @@ You can use the numeric keypad so that "8" goes forward and "2" goes backwards. 
 
 ## Demo
 
-![demo_grow](docs/demo_grow.gif)
+![Demo of Growth of simple pinnate plant](docs/grow_pinnate.gif)
+![Demo of Growth of a more complex plant](docs/grow_complex.gif)
 
 
