@@ -36,3 +36,6 @@ You can use the numeric keypad so that "8" goes forward and "2" goes backwards. 
 ![Demo of Growth of a more complex plant](docs/grow_complex.gif)
 
 
+# License
+
+This code is provided under the "Creative Commons NonCommercial NoDerivatives" license. Aka [CC BY-NC-ND](https://github.com/Gibberlings3/GitHub-Templates/blob/master/License-Templates/CC-BY-NC-ND-4.0/LICENSE-CC-BY-NC-ND-4.0.md) license. 
