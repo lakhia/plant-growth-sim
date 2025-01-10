@@ -41,4 +41,4 @@ build/plant.o: plant.cpp plant.h lowlevel.h bitmap.h
 
 # Rule to clean
 clean:
-	rm -f $(OBJ_DIR) $(PROG)
+	rm -fr $(OBJ_DIR) $(PROG)

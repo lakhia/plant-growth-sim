@@ -5,6 +5,12 @@
 
 #pragma once
 
+#ifdef __APPLE__
+    #include <GLUT/glut.h>
+#else
+    #include <GL/glut.h>
+#endif
+
 /* Constants */
 #define SPIN 0.0025                     /* Speed of right/left spin */
 #define SPEED 0.005                     /* Speed of forward/backward mov */

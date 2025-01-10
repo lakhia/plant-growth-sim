@@ -5,8 +5,12 @@
 
 /* Include files */
 #include "plant.h"
+#ifdef __APPLE__
+    #include <GLUT/glut.h>
+#else
+    #include <GL/glut.h>
+#endif
 #include <math.h>                       /* Need math functions */
-#include <GLUT/glut.h>                  /* OpenGL routines */
 #include <stdio.h>                      /* For file operations */
 #include <string.h>                     /* String operations */
 #include <stdlib.h>
