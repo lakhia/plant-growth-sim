@@ -11,6 +11,7 @@
     #include <GL/glut.h>
 #endif
 #include <math.h>                       /* Need math functions */
+#include <random>                       /* For guassian random function */
 #include <stdio.h>                      /* For file operations */
 #include <string.h>                     /* String operations */
 #include <stdlib.h>
@@ -96,30 +97,9 @@ float uniform(float mu, float sigma)
 /* Box Muller method to calculating guassian distribution */
 float guassian(float m, float s)
 {
-    double x1, x2, w, y1;
-    static double y2;
-    static int use_last = 0;
- 
-    if (use_last)                       /* use value from previous call */
-    {
-        y1 = y2;
-        use_last = 0;
-    }
-    else
-    {
-        do {
-            x1 = 2.0 * (rand()/RAND_MAX) - 1.0;
-            x2 = 2.0 * (rand()/RAND_MAX) - 1.0;
-            w = x1 * x1 + x2 * x2;
-        } while ( w >= 1.0 || w == 0.0);
- 
-        w = sqrt( (-2.0 * log( w ) ) / w );
-        y1 = x1 * w;
-        y2 = x2 * w;
-        use_last = 1;
-    }
-
-    return( m + y1 * s );
+    static std::normal_distribution<double> distribution(m, s);
+    std::default_random_engine generator;
+    return distribution(generator);
 }
 
 /* Retrieve state from state tree */
