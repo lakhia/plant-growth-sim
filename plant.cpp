@@ -94,11 +94,11 @@ float uniform(float mu, float sigma)
     return mu - sigma/2 + (rand() * sigma/RAND_MAX);
 }
 
-/* Box Muller method to calculating guassian distribution */
+/* Use std library to return a guassian distribution random variable */
 float guassian(float m, float s)
 {
-    static std::normal_distribution<double> distribution(m, s);
-    std::default_random_engine generator;
+    std::normal_distribution<double> distribution(m, s);
+    static std::default_random_engine generator;
     return distribution(generator);
 }
 
