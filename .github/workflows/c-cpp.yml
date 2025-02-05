@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
     - uses: actions/checkout@v4
-    - name: make
+    - name: Install dependencies
+      run: sudo apt-get install freeglut3-dev
+    - name: Build project
       run: make BOX=linux
