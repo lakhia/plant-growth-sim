@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Install dependencies
       run: sudo apt-get install freeglut3-dev
     - name: Build project
