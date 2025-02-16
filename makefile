@@ -20,7 +20,7 @@ OBJS = build/plant.o build/lowlevel.o build/bitmap.o
 
 # LDLIBS varies based on the machine type
 ifeq ($(BOX), linux)
-LDLIBS = -L/usr/X11R6/lib/ -lglut -lGLU -lm
+LDLIBS = -L/usr/X11R6/lib/ -lglut -lGLU -lGL -lm
 else
 LDLIBS = -framework GLUT -framework OpenGL
 endif
